@@ -1,21 +1,33 @@
-<<<<<<< HEAD
-# character-search-app
-Search for tv show characters using 2 flavors
-=======
-# character_search_app
+# Character Search App
 
-A new Flutter project.
+Character Search App is a Flutter project that allows users to search and view characters' information from two different endpoints. The app is built using Flutter's BLoC architecture for state management and provides an adaptive UI for both phones and tablets. It also includes some test coverage for critical app functionality to ensure stability and reliability.
+
+## Features
+
+- Search characters from two different endpoints: one for "The Simpsons" and "The Wire".
+These are, respectively,
+http://api.duckduckgo.com/?q=simpsons+characters&format=json 
+https://api.duckduckgo.com/?q=the+wire+characters&format=json
+- Utilizes Flutter's BLoC pattern for efficient state management.
+- Adaptive UI design for both phone and tablet devices.
+- Some testign for critical app functionality included to ensure code quality and reliability.
+- Easily switch between different character endpoints using app flavors.
+
+## Flavors
+
+The app supports two flavors:
+
+1. **The Simpsons Flavor:** Connects to endpoint "http://api.duckduckgo.com/?q=simpsons+characters&format=json" for fetching character information.
+2. **The Wire Flavor:** Connects to Endpoint "https://api.duckduckgo.com/?q=the+wire+characters&format=json" for fetching character information.
+
+You can select the desired flavor by specifying the flavor during build inside 'main.dart' or by using build configurations.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. **Prerequisites:**
+   - Ensure you have Flutter and Dart installed. If not, follow the instructions in the [official Flutter documentation](https://flutter.dev/docs/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> 50fe45a (Initial commit)
+2. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/villegas-abva/character-search-app.git
+   cd character-search-app
