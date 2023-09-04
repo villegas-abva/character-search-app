@@ -21,7 +21,7 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<List<Character>> getCharacters(
+  Future<dynamic> getCharacters(
     String query,
     String format,
   ) async {
@@ -32,26 +32,23 @@ class _ApiService implements ApiService {
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Character>>(Options(
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var value = _result.data!
-        .map((dynamic i) => Character.fromJson(i as Map<String, dynamic>))
-        .toList();
+        .compose(
+          _dio.options,
+          '/',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
     return value;
   }
 

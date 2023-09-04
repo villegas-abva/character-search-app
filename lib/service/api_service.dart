@@ -14,7 +14,8 @@ abstract class ApiService {
   /// This parsing, mapping, and String manipulation is done inside [CharacterRepository]'s
   /// [fetchCharacters] function.
   @GET('/')
-  Future<List<Character>> getCharacters(
+  // Future<List<Character>> getCharacters(
+  Future<dynamic> getCharacters(
     @Query("q") String query,
     @Query("format") String format,
   );
